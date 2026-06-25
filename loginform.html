@@ -167,6 +167,14 @@ const quizQuestions = [
     { q: "What is the file extension of a JavaScript file?", a: ".js", options: [".java", ".js", ".html", ".css"] },
     { q: "Where is data permanently saved in a computer?", a: "Hard Disk", options: ["RAM", "ROM", "Hard Disk", "Cache"] }
 ];
+<script>
+    document.getElementById('likeBtn').addEventListener('click', function() {
+        document.getElementById('msg').innerText = "Thank you for liking! ❤️";
+    });
+    document.getElementById('dislikeBtn').addEventListener('click', function() {
+        document.getElementById('msg').innerText = "Thanks for your feedback! 👍";
+    });
+</script>
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -244,14 +252,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     <p id="msg" style="margin-top: 10px; font-weight: bold;"></p>
 </div>
 
-<script>
-    document.getElementById('likeBtn').addEventListener('click', function() {
-        document.getElementById('msg').innerText = "Thank you for liking! ❤️";
-    });
-    document.getElementById('dislikeBtn').addEventListener('click', function() {
-        document.getElementById('msg').innerText = "Thanks for your feedback! 👍";
-    });
-</script>
+
 
 
 </body>
