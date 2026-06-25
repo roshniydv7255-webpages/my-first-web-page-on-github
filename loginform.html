@@ -1,160 +1,26 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Login Form</title>
+    <title>my first  Quiz Website</title>
     <style>
-        /* पूरे पेज का बैकग्राउंड और स्टाइल */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        /* लॉगिन बॉक्स का स्टाइल */
-        .login-container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            width: 350px;
-            text-align: center;
-        }
-
-        .login-container h2 {
-            margin-bottom: 24px;
-            color: #333333;
-            font-size: 28px;
-        }
-
-        /* इनपुट फील्ड्स का स्टाइल */
-        .input-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 6px;
-            color: #666666;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cccccc;
-            border-radius: 6px;
-            font-size: 14px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-
-        /* इनपुट बॉक्स पर क्लिक करने पर इफेक्ट */
-        .input-group input:focus {
-            border-color: #667eea;
-            outline: none;
-            box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Remember Me और Forgot Password की लाइन */
-        .extra-options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            margin-bottom: 24px;
-            color: #555555;
-        }
-
-        .extra-options a {
-            color: #764ba2;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .extra-options a:hover {
-            text-decoration: underline;
-        }
-
-        /* लॉगिन बटन का स्टाइल */
-        .login-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            border-radius: 6px;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .login-btn:hover {
-            opacity: 0.9;
-        }
-
-        /* नीचे नया अकाउंट बनाने का लिंक */
-        .signup-text {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666666;
-        }
-
-        .signup-text a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .signup-text a:hover {
-            text-decoration: underline;
-        }
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; padding: 20px; background-color: #f4f4f9; }
+        .login-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 10px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <div class="login-container">
-        <h2>Login for daily quiz</h2>
-        <form action="#">
-            <!-- ईमेल या यूज़रनेम -->
-            <div class="input-group">
-                <label for="username">Email or Username</label>
-                <input type="text" id="username" placeholder="Enter your email" required>
-            </div>
+<div class="login-container">
+    <form>
+        <h2>Login for quiz</h2>
+        <input type="email" placeholder="Enter any Email" required>
+        <input type="password" placeholder="Enter any 4 digit for Password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
 
-            <!-- पासवर्ड -->
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
-            </div>
-
-            <!-- एक्स्ट्रा ऑप्शंस -->
-            <div class="extra-options">
-                <label>
-                    <input type="checkbox"> Remember me
-                </label>
-                <a href="#">Forgot Password?</a>
-            </div>
-<h5 style="color:red;font-size:4;">​"Your data won't be shared. This login is just to show the next page."
-</h5>
-
-            <!-- लॉगिन बटन -->
-            <button type="submit" class="login-btn">Log In</button>
-
-            <!-- साइन अप लिंक -->
-            <p class="signup-text">Don't have an account? <a href="#">Sign Up</a></p>
-        </form>
-    </div>
 <script>
-// Naya Quiz Code (Purane code ko bina delete kiye)
 const quizQuestions = [
     { q: "What does HTML stand for?", a: "Hyper Text Markup Language", options: ["Hyper Text Markup Language", "High Text Machine Language", "Hyper Tabular Machine Language", "Hyper Text Main Language"] },
     { q: "Which technology is used to style a web page?", a: "CSS", options: ["HTML", "CSS", "PHP", "SQL"] },
@@ -168,72 +34,37 @@ const quizQuestions = [
     { q: "Where is data permanently saved in a computer?", a: "Hard Disk", options: ["RAM", "ROM", "Hard Disk", "Cache"] }
 ];
 
-
-
 let currentQuestionIndex = 0;
 let score = 0;
 
-// Yeh event tab chalega jab pehle wale login form par submit hoga
 document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Page ko reload hone se rokega
+    event.preventDefault();
+    const container = document.querySelector('.login-container');
     
-    // 2 second ka gap dene ke liye taaki "Thanking you for login" thodi der dikhe
-    setTimeout(() => {
-        const container = document.querySelector('.login-container');
-        
-        function loadQuiz() {
-            if (currentQuestionIndex < quizQuestions.length) {
-                const currentQuestion = quizQuestions[currentQuestionIndex];
-                
-                container.innerHTML = `
-                    <div style="text-align: left; padding: 10px;">
-                        <h3 style="color: #667eea; margin-bottom: 5px;">Thanking you for login</h3>
-                        <p style="font-weight: bold; color: #555; margin-bottom: 15px;">Question ${currentQuestionIndex + 1} of 10:</p>
-                        <p style="font-size: 18px; margin-bottom: 15px; color: #333; font-weight: 500;">${currentQuestion.q}</p>
-                        <div id="options-container"></div>
-                    </div>
-                `;
-                
-                const optionsContainer = document.getElementById('options-container');
-                currentQuestion.options.forEach(option => {
-                    const button = document.createElement('button');
-                    button.innerText = option;
-                    button.style.width = "100%";
-                    button.style.padding = "12px";
-                    button.style.margin = "6px 0";
-                    button.style.border = "1px solid #667eea";
-                    button.style.borderRadius = "5px";
-                    button.style.backgroundColor = "#fff";
-                    button.style.cursor = "pointer";
-                    button.style.textAlign = "left";
-                    button.style.transition = "0.2s";
-                    
-                    button.onmouseover = () => button.style.backgroundColor = "#f0f2ff";
-                    button.onmouseout = () => button.style.backgroundColor = "#fff";
-                    
-                    button.addEventListener('click', () => {
-                        if (option === currentQuestion.a) {
-                            score++;
-                        }
-                        currentQuestionIndex++;
-                        loadQuiz();
-                    });
-                    
-                    optionsContainer.appendChild(button);
-                });
-            } else {
-                container.innerHTML = `
-                    <h2 style="color: #667eea; margin-bottom: 15px;">Quiz Completed!</h2>
-                    <p style="font-size: 20px; color: #333; margin-bottom: 15px;">Your Score: <b>${score} / 10</b></p>
-                    <p style="color: #555;">Thank you for taking the quiz.</p>
-                    <button onclick="location.reload()" style="margin-top: 15px; padding: 10px 20px; background: #667eea; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Play Again</button>
-                `;
-            }
+    function loadQuiz() {
+        if (currentQuestionIndex < quizQuestions.length) {
+            const q = quizQuestions[currentQuestionIndex];
+            container.innerHTML = `<h3>Question ${currentQuestionIndex + 1}</h3><p>${q.q}</p>` + 
+            q.options.map(opt => `<button style="margin:5px 0" onclick="check('${opt}', '${q.a}')">${opt}</button>`).join('');
+        } else {
+            container.innerHTML = `<h2>Quiz Completed!</h2><p>Your Score: ${score}/10</p>
+            <p>Did you like it?</p>
+            <button onclick="document.getElementById('msg').innerText='Thank you! ❤️'" style="background:green">👍 Like</button>
+            <button onclick="document.getElementById('msg').innerText='Thanks for feedback! 👍'" style="background:red; margin-top:5px">👎 Dislike</button>
+            <p id="msg" style="margin-top:10px; font-weight:bold;"></p>
+            <button onclick="location.reload()" style="background:#333; margin-top:10px">Restart</button>`;
         }
-        
+    }
+
+    window.check = (selected, correct) => {
+        if(selected === correct) score++;
+        currentQuestionIndex++;
         loadQuiz();
-    }, 1500); // 1.5 second baad quiz shuru hoga
+    };
+    
+    loadQuiz();
 });
 </script>
+
 </body>
 </html>
