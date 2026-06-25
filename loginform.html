@@ -167,14 +167,14 @@ const quizQuestions = [
     { q: "What is the file extension of a JavaScript file?", a: ".js", options: [".java", ".js", ".html", ".css"] },
     { q: "Where is data permanently saved in a computer?", a: "Hard Disk", options: ["RAM", "ROM", "Hard Disk", "Cache"] }
 ];
-<script>
-    document.getElementById('likeBtn').addEventListener('click', function() {
-        document.getElementById('msg').innerText = "Thank you for liking! ❤️";
-    });
-    document.getElementById('dislikeBtn').addEventListener('click', function() {
-        document.getElementById('msg').innerText = "Thanks for your feedback! 👍";
-    });
-</script>
+
+
+<div style="margin-top: 20px; text-align: center;">
+    <p>Did you like this quiz?</p>
+    <button id="likeBtn" style="padding: 10px; background: green; color: white; border: none; cursor: pointer;">👍 Like</button>
+    <button id="dislikeBtn" style="padding: 10px; background: red; color: white; border: none; cursor: pointer;">👎 Dislike</button>
+    <p id="msg" style="margin-top: 10px; font-weight: bold;"></p>
+</div>
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -241,19 +241,5 @@ document.querySelector('form').addEventListener('submit', function(event) {
     }, 1500); // 1.5 second baad quiz shuru hoga
 });
 </script>
-
-
-
-
-<div style="margin-top: 20px; text-align: center;">
-    <p>Did you like this quiz?</p>
-    <button id="likeBtn" style="padding: 10px; background: green; color: white; border: none; cursor: pointer;">👍 Like</button>
-    <button id="dislikeBtn" style="padding: 10px; background: red; color: white; border: none; cursor: pointer;">👎 Dislike</button>
-    <p id="msg" style="margin-top: 10px; font-weight: bold;"></p>
-</div>
-
-
-
-
 </body>
 </html>
