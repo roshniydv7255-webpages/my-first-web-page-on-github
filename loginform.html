@@ -151,6 +151,17 @@
             <p class="signup-text">Don't have an account? <a href="#">Sign Up</a></p>
         </form>
     </div>
-
+<script>
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // यह पेज को रीलोड होने से रोकेगा
+    
+    // पूरे फॉर्म की जगह थैंक यू मैसेज दिखाने के लिए
+    const container = document.querySelector('.login-container');
+    container.innerHTML = `
+        <h2 style="color: #667eea; margin-bottom: 15px;">Thanking you for login</h2>
+        <p style="color: #555;">आपका लॉगिन सफलतापूर्वक हो गया है।</p>
+    `;
+});
+</script>
 </body>
 </html>
