@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>my first  Quiz Website</title>
+    <title>My Quiz & Feedback Website</title>
     <style>
         body { font-family: Arial, sans-serif; display: flex; justify-content: center; padding: 20px; background-color: #f4f4f9; }
-        .login-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
+        .login-container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
         input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        button { width: 100%; padding: 10px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button { width: 100%; padding: 12px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; font-size: 16px; }
+        .btn-like { background: #4CAF50; margin-bottom: 8px; }
+        .btn-dislike { background: #f44336; margin-bottom: 8px; }
     </style>
 </head>
 <body>
 
-<div class="login-container">
-    <form>
-        <h2>Login for quiz</h2>
-        <input type="email" placeholder="Enter your Email" required>
-        <input type="password" placeholder="Enter any 4 digit for Password" required>
-<h4 style="color:red;">​"Your data won't be shared. This login is just to show the next page." </h4>
+<div class="login-container" id="main-box">
+    <form id="loginForm">
+        <h2>Login</h2>
+        <input type="email" placeholder="Enter Email" required>
+        <input type="password" placeholder="Enter Password" required>
         <button type="submit">Login</button>
     </form>
 </div>
@@ -38,22 +39,26 @@ const quizQuestions = [
 let currentQuestionIndex = 0;
 let score = 0;
 
-document.querySelector('form').addEventListener('submit', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const container = document.querySelector('.login-container');
+    const container = document.getElementById('main-box');
     
     function loadQuiz() {
         if (currentQuestionIndex < quizQuestions.length) {
             const q = quizQuestions[currentQuestionIndex];
             container.innerHTML = `<h3>Question ${currentQuestionIndex + 1}</h3><p>${q.q}</p>` + 
-            q.options.map(opt => `<button style="margin:5px 0" onclick="check('${opt}', '${q.a}')">${opt}</button>`).join('');
+            q.options.map(opt => `<button onclick="check('${opt}', '${q.a}')">${opt}</button>`).join('');
         } else {
-            container.innerHTML = `<h2>Quiz Completed!</h2><p>Your Score: ${score}/10</p>
-            <p>Did you like it?</p>
-            <button onclick="document.getElementById('msg').innerText='Thank you! ❤️'" style="background:green">👍 Like</button>
-            <button onclick="document.getElementById('msg').innerText='Thanks for feedback! 👍'" style="background:red; margin-top:5px">👎 Dislike</button>
-            <p id="msg" style="margin-top:10px; font-weight:bold;"></p>
-            <button onclick="location.reload()" style="background:#333; margin-top:10px">Restart</button>`;
+            container.innerHTML = `
+                <h2>Quiz Completed!</h2>
+                <p style="font-size: 18px;">Your Score: <b>${score}/10</b></p>
+                <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px 0;">
+                <p>Did you like my website? Click below to send me your choice:</p>
+                
+                <button onclick="sendFeedback('Liked 👍')" class="btn-like">👍 Like Website</button>
+                <button onclick="sendFeedback('Disliked 👎')" class="btn-dislike">👎 Dislike Website</button>
+                <button onclick="location.reload()" style="background:#333; margin-top: 15px;">Play Again</button>
+            `;
         }
     }
 
@@ -65,6 +70,18 @@ document.querySelector('form').addEventListener('submit', function(event) {
     
     loadQuiz();
 });
+
+
+function sendFeedback(userChoice) {
+    
+    const myEmail = "roshniy7255@gmail.com"; 
+    
+    const subject = encodeURIComponent("Website Feedback");
+    const body = encodeURIComponent(`Hi! I played your computer quiz. My score was ${score}/10 and I ${userChoice} your website!`);
+    
+   
+    window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+}
 </script>
 
 </body>
