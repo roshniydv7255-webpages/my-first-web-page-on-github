@@ -234,5 +234,25 @@ document.querySelector('form').addEventListener('submit', function(event) {
 });
 </script>
 
+
+
+
+<div style="margin-top: 20px; text-align: center;">
+    <p>Did you like this quiz?</p>
+    <button id="likeBtn" style="padding: 10px; background: green; color: white; border: none; cursor: pointer;">👍 Like</button>
+    <button id="dislikeBtn" style="padding: 10px; background: red; color: white; border: none; cursor: pointer;">👎 Dislike</button>
+    <p id="msg" style="margin-top: 10px; font-weight: bold;"></p>
+</div>
+
+<script>
+    document.getElementById('likeBtn').addEventListener('click', function() {
+        document.getElementById('msg').innerText = "Thank you for liking! ❤️";
+    });
+    document.getElementById('dislikeBtn').addEventListener('click', function() {
+        document.getElementById('msg').innerText = "Thanks for your feedback! 👍";
+    });
+</script>
+
+
 </body>
 </html>
